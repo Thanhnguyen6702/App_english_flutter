@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_english/pages/review_vocab_page.dart';
 import 'package:learn_english/value/app_assets.dart';
 import 'package:learn_english/value/app_colors.dart';
 import 'package:learn_english/value/app_styles.dart';
@@ -129,7 +130,7 @@ class _HomePageState extends State<HomePage> {
           Expanded(
               flex: 2,
               child: Container(
-                margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                margin: const EdgeInsets.only(left: 20, right: 20, top: 20,bottom: 50),
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
                         begin: AlignmentDirectional.topStart,
@@ -165,7 +166,6 @@ class _HomePageState extends State<HomePage> {
                     Spacer(),
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 20),
-                      alignment: Alignment.bottomLeft,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -174,7 +174,10 @@ class _HomePageState extends State<HomePage> {
                                   backgroundColor: AppColor.orangeRed,
                                   foregroundColor: Colors.white,
                                   elevation: 10),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context,
+                                MaterialPageRoute(builder: (_) => ReviewVocab()));
+                              },
                               child: Text(
                                 'Ôn tập',
                                 style: AppStyle.h5
@@ -187,11 +190,9 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    Spacer()
                   ],
                 ),
               )),
-          Expanded(flex: 1, child: Container())
         ],
       ),
     );
